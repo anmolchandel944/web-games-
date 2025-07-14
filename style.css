@@ -1,0 +1,197 @@
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+
+:root {
+  --bg: #111;
+  --text: #fff;
+  --card-bg: rgba(255, 255, 255, 0.07);
+  --accent: #ffd700;
+}
+
+body.light {
+  --bg: #fff;
+  --text: #111;
+  --card-bg: #f4f4f4;
+  --accent: #333;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Poppins', sans-serif;
+  transition: 0.3s;
+}
+
+header {
+  padding: 20px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+  font-size: 2.5rem;
+}
+
+.controls {
+  margin-top: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+#searchBar {
+  padding: 10px;
+  width: 220px;
+  border-radius: 25px;
+  border: none;
+  font-size: 1rem;
+}
+
+.filters button,
+#themeToggle {
+  padding: 8px 18px;
+  border: none;
+  border-radius: 20px;
+  background: var(--accent);
+  color: var(--bg);
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 0.95rem;
+}
+
+.filters .active {
+  background: #ffa500;
+}
+
+.carousel {
+  overflow: hidden;
+  width: 100%;
+  margin: 20px 0;
+}
+
+.carousel-track {
+  display: flex;
+  width: max-content;
+  animation: slide 15s linear infinite;
+}
+
+.carousel-track img {
+  width: 280px;
+  margin: 0 10px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+  padding: 20px;
+}
+
+.game-card {
+  background: var(--card-bg);
+  padding: 15px;
+  border-radius: 15px;
+  text-align: center;
+  transition: 0.3s ease;
+}
+
+.game-card:hover {
+  transform: translateY(-5px);
+}
+
+.game-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.game-card h2 {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  color: var(--accent);
+}
+
+.game-card p {
+  font-size: 0.95rem;
+  color: var(--text);
+}
+
+.game-card a {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 20px;
+  background: var(--accent);
+  color: var(--bg);
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #000;
+  color: #aaa;
+  font-size: 0.85rem;
+}
+
+/* 📱 Responsive Media Queries */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  .controls {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #searchBar {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .carousel-track img {
+    width: 240px;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-track img {
+    width: 200px;
+  }
+
+  .game-card img {
+    height: 140px;
+  }
+
+  .game-card h2 {
+    font-size: 1rem;
+  }
+
+  .game-card p {
+    font-size: 0.85rem;
+  }
+
+  .game-card a {
+    font-size: 0.85rem;
+    padding: 6px 15px;
+  }
+
+  footer {
+    font-size: 0.75rem;
+  }
+}
